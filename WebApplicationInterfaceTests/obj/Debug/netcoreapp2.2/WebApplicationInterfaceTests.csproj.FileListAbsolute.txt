@@ -1,0 +1,16 @@
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplicationInterfaceTests.deps.json
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplicationInterfaceTests.runtimeconfig.json
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplicationInterfaceTests.runtimeconfig.dev.json
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplicationInterfaceTests.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplicationInterfaceTests.pdb
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplication1.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\bin\Debug\netcoreapp2.2\WebApplication1.pdb
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.csprojResolveAssemblyReference.cache
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.csproj.CoreCompileInputs.cache
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.AssemblyInfoInputs.cache
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.AssemblyInfo.cs
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.dll
+c:\users\akumar\source\repos\WebApplication1\WebApplicationInterfaceTests\obj\Debug\netcoreapp2.2\WebApplicationInterfaceTests.pdb
