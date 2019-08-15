@@ -1,14 +1,19 @@
 pipeline {
 	agent any
 	stages{
+
+	    stage('clone')
 		stage('build') {
 			steps {
 				echo 'Building the test'
+				bat 'dotnet build WebApplication1.sln --configuration Release"'
+
 			}
 		}
 		stage('Test') {
 			steps {
-				echo 'Running tests' 
+				echo 'Running tests'
+                bat 'dotnet test WebApplication1.sln'
 			}
 		}
 	}
