@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	stages{
 
-	    stage('clone')
+	   
 		stage('build') {
 			steps {
 				echo 'Building the test'
