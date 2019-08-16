@@ -15,6 +15,18 @@ pipeline {
 				echo 'Running tests'
                 bat 'dotnet test WebApplication1.sln'
 			}
+			stage('Publish'){
+				steps{
+					echo 'Pusblish the WebApplication'
+					bat 'dotnet publish WebApplication.sln'
+				}
+			}
+			stage('Archive-Artifacts'){
+				steps{
+					echo 'Archive the artifacts'
+					archiveArtifacts 'WebApplication1/bin/Release/netcoreapp2.2/'
+				}
+			}
 		}
 	}
 }
