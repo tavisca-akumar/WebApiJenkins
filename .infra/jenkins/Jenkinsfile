@@ -27,7 +27,7 @@ pipeline {
 				steps{
 					echo 'Deploying the WebApplication'
 					bat 'docker build --tag=webapp .'
-					bat 'docker run -p 9825:80 webapp'
+					bat 'docker run -p 7200:80 webapp'
 					
 				}
 			
