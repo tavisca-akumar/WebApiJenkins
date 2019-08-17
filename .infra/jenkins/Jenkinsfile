@@ -27,7 +27,7 @@ pipeline {
 				steps{
 					echo 'Deploying the WebApplication'
 					powershell docker build --tag=webapp .
-					powershell docker run -p 9824:80 --name myapp4 webapp
+					powershell docker run -p 9824:80 webapp
 					
 				}
 			
