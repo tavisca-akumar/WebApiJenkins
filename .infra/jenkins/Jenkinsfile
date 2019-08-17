@@ -26,8 +26,8 @@ pipeline {
 			stage('Deploy'){
 				steps{
 					echo 'Deploying the WebApplication'
-					 docker build --tag=webapp .
-					 docker run -p 9824:80 --name myapp4 webapp
+					powershell docker build --tag=webapp .
+					powershell docker run -p 9824:80 --name myapp4 webapp
 					
 				}
 			
