@@ -22,12 +22,17 @@ pipeline {
 					bat 'dotnet publish WebApplication1.sln'
 				}
 			}
-			stage('Archive-Artifacts'){
+
+			stage('Deploy'){
 				steps{
-					echo 'Archive the artifacts'
-					archiveArtifacts 'WebApplication1\\bin\\Release\\netcoreapp2.2\\*'
+					echo 'Deploying the WebApplication'
+					 docker build --tag=webapp .
+					 docker run -p 9824:80 --name myapp4 webapp
+					
 				}
+			
 			}
+			
 		
 	}
 }
