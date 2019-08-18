@@ -1,39 +1,18 @@
 pipeline {
 	agent any
-	stages{
 
-	   
-		stage('build') {
-			steps {
-				echo 'Building the test'
-				bat 'dotnet build WebApplication1.sln --configuration Release"'
+	parameters{
+		string(name: 'Greeting',defaultValue: 'hello',description: 'How should I greet the world?')
+	}
 
+	stages{	 
+	
+		stage('Example'){
+			steps{
+				echo "${params.Greeting} World!"
 			}
 		}
-		stage('Test') {
-			steps {
-				echo 'Running tests'
-                bat 'dotnet test WebApplication1.sln'
-			}
-		}
-			stage('Publish'){
-				steps{
-					echo 'Pusblish the WebApplication'
-					bat 'dotnet publish WebApplication1.sln'
-				}
-			}
-
-			stage('Deploy'){
-				steps{
-					echo 'Deploying the WebApplication'
-					powershell 'docker build --tag=webapp .'
-					powershell 'docker login'
-					powershell 'docker tag webapp kumar22197/webapplication:part4'
-					powershell 'docker push kumar22197/webapplication:part4'
-				}
-			
-			}
-			
+		
 		
 	}
 }
