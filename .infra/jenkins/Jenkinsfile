@@ -50,7 +50,7 @@ pipeline {
 		}
 		stage('Docker_build'){
 			steps{
-		         powershell 'docker build --tag= %Docker_Image% .'
+		         powershell "docker build --tag= ${Docker_Image} ."
 			}
 		}
 		
