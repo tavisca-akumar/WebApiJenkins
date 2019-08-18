@@ -27,7 +27,7 @@ pipeline {
 				steps{
 					echo 'Deploying the WebApplication'
 					powershell 'docker build --tag=webapp .'
-					powershell 'winpty docker login'
+					powershell 'docker login'
 					powershell 'docker tag webapp kumar22197/webapplication:part4'
 					powershell 'docker push kumar22197/webapplication:part4'
 				}
