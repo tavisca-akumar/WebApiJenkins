@@ -34,7 +34,7 @@ pipeline {
 
 		stage('build'){
 			steps{
-				  bat 'dotnet build WebApplication.sln -p:Configuration=release -v:q'
+				  bat 'dotnet build WebApplication1.sln -p:Configuration=release -v:q'
 			     }
 		 }
 
