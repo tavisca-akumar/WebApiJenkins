@@ -26,10 +26,10 @@ pipeline {
 			stage('Deploy'){
 				steps{
 					echo 'Deploying the WebApplication'
-					bat 'docker build --tag=webapp .'
-					bat 'winpty docker login'
-					bat 'docker tag webapp kumar22197/webapplication:part4'
-					bat 'docker push kumar22197/webapplication:part4'
+					powershell 'docker build --tag=webapp .'
+					powershell 'winpty docker login'
+					powershell 'docker tag webapp kumar22197/webapplication:part4'
+					powershell 'docker push kumar22197/webapplication:part4'
 				}
 			
 			}
