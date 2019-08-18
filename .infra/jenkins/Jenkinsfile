@@ -14,11 +14,10 @@ pipeline {
 			steps{
 				echo "${params.Greeting} World!"
 
-				echo "Choice: ${params.CHOICE}"
 
 			}
 		}
-		stage('Example'){
+		stage('build'){
 		  bat 	'dotnet build %Project_Path% -p:Configuration=release -v:q'
 		}
 		
