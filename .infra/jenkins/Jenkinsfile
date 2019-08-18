@@ -50,7 +50,7 @@ pipeline {
 		}
 		stage('Docker_build'){
 			steps{
-		         bat "docker build --tag= ${Docker_Image} ."
+		         bat "docker build --tag=webapp ."
 			}
 		}
 		
