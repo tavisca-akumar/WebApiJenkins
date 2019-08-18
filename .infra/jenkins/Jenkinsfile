@@ -5,6 +5,7 @@ pipeline {
 		
 		string(name: 'Github_Username', defaultValue:'tavisca-akumar')
 
+		string (name: 'Branch_name' , defaultName: 'build_job')
 	    string(name: 'Repositery_name', defaultValue: 'WebApiJenkins')
 
 		string (name: 'Solution_file',defaultValue: 'WebApplication1')
@@ -26,17 +27,16 @@ pipeline {
 		
 		stage('clone'){
 			steps{				
-				git "https://github.com/${Github_Username}/${Repositery_name}.git"
-
+			    git branch: ${Branch_name}, url: 'https://github.com/${Github_Username}/${Repositery_name}.git'
 			  }
 		}
-		stage('build'){
 
+		stage('build'){
 			steps{
 				  bat 'dotnet build ${Solution_file}.sln -p:Configuration=release -v:q'
-
 			     }
 		 }
+
 		stage('Test'){
 			steps{
 				bat 'dotnet test ${Solution_file}.sln'
