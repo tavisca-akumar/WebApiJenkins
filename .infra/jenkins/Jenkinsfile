@@ -3,6 +3,10 @@ pipeline {
 
 	parameters{
 		string(name: 'Greeting',defaultValue: 'hello',description: 'How should I greet the world?')
+
+		 choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+
 	}
 
 	stages{	 
