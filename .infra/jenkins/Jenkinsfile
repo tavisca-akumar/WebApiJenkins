@@ -28,7 +28,7 @@ pipeline {
 		
 		stage('clone'){
 			steps{				
-			    git branch: ${Branch_name}, url: 'https://github.com/${Github_Username}/${Repositery_name}.git'
+			    git branch: '${Branch_name}', url: 'https://github.com/${Github_Username}/${Repositery_name}.git'
 			  }
 		}
 
