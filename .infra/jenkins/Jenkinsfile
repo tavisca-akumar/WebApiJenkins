@@ -2,29 +2,70 @@ pipeline {
 	agent any
 
 	parameters{
-		string(name: 'Greeting',defaultValue: 'hello',description: 'How should I greet the world?')
+		
+		string(name: 'Github_Username', defaultValue:'tavisca-akumar')
 
-	 string(name: 'Project_Path', defaultValue: 'WebApplication1.sln')
+	    string(name: 'Repositery_name', defaultValue: 'WebApiJenkins')
 
+		string (name: 'Solution_file',defaultValue: 'WebApplication1')
+
+		string (name: 'Branch_name', defaultValue: 'master')
+
+		string (name: 'Docker_UserName', defaultValue: 'kumar22197')
+
+		string (name: 'Docker_Image', defaultValue: 'webapp')
+
+		string(name: 'Docker_Repo' ,defaultValue: 'webapplication')
+
+
+		
 	}
 
 	stages{	 
 	
-		stage('Example'){
-			steps{
-				echo "${params.Greeting} World!"
+		
+		stage('clone'){
+			steps{				
+				git "https://github.com/${Github_Username}/${Repositery_name}.git"
 
-
-			}
+			  }
 		}
 		stage('build'){
 
 			steps{
-						  bat 'dotnet build %Project_Path% -p:Configuration=release -v:q'
+				  bat 'dotnet build ${Solution_file}.sln -p:Configuration=release -v:q'
 
+			     }
+		 }
+		stage('Test'){
+			steps{
+				bat 'dotnet test ${Solution_file}.sln'
+			}
+		}
+		stage('publish'){
+			steps{
+				bat 'dotnet publish ${Solution_file}.sln' 
+			}
+		}
+		stage('Docker_build'){
+			steps{
+		         powershell 'docker build --tag= ${Docker_Image} .'
 			}
 		}
 		
+		stage('Publish to Docker Hub'){
+		 
+		  steps{
+			 powershell 'docker tag ${Docker_Image} ${Docker_UserName}/${Docker_Repo}:part88'
+			 powershell 'docker image rm -f ${Docker_Image}:part88'
+				
+				script{
+				  docker.withRegistry('https://registry.hub.docker.com',"${Docker_Hub_Credentials}"){
+				    powershell 'docker push ${Docker_UserName}/${Docker_Repo}:part88'
+				 }
+			}
+	   }
+   }
 		
 	}
 }
