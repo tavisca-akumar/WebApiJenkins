@@ -11,7 +11,7 @@ pipeline {
 
 		string (name: 'Solution_file',defaultValue: 'WebApplication1')
 
-		string (name: 'Branch_name', defaultValue: 'master')
+		
 
 		string (name: 'Docker_UserName', defaultValue: 'kumar22197')
 
