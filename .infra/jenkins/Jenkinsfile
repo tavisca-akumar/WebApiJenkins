@@ -18,7 +18,11 @@ pipeline {
 			}
 		}
 		stage('build'){
-		  bat 	'dotnet build %Project_Path% -p:Configuration=release -v:q'
+
+			steps{
+						  bat 'dotnet build %Project_Path% -p:Configuration=release -v:q'
+
+			}
 		}
 		
 		
