@@ -11,10 +11,6 @@ pipeline {
 
 		string (name: 'Solution_file',defaultValue: 'WebApplication1')
 
-		
-
-		
-
 		string (name: 'Docker_Image', defaultValue: 'webapp')
 
 		
@@ -33,6 +29,10 @@ pipeline {
 		stage('build'){
 			steps{
 				  bat 'dotnet build %Solution_file%.sln -p:Configuration=release -v:q'
+
+				  dotnet "C:/Users/akumar/Downloads/sonar-scanner-msbuild-4.6.2.2108-netcoreapp2.0/SonarScanner.MSBuild.dll" begin /k:"Ankit22197" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="bf73458e8e14625c68e0d8267426dbcaf85e1bf3"
+                  dotnet build %Solution_file%.sln    
+                  dotnet "C:/Sundesh/Training/Week 4/sonar for ms build/SonarScanner.MSBuild.dll" end /d:sonar.login="bf73458e8e14625c68e0d8267426dbcaf85e1bf3"
 			     }
 		 }
 
