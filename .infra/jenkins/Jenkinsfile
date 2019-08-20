@@ -28,9 +28,9 @@ pipeline {
 
 		stage('build'){
 			steps{
-				  powershell 'dotnet build %Solution_file%.sln -p:Configuration=release -v:q'
+				  bat 'dotnet build %Solution_file%.sln -p:Configuration=release -v:q'
 
-				   }
+				 }
 		 }
 
 		stage('Test'){
