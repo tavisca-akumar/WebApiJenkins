@@ -15,5 +15,15 @@ namespace WebApplicationInterfaceTests
             Assert.Equal("hi", result);
 
         }
+
+        [Fact]
+
+        public void Test2()
+        {
+            var result = ValuesController.Get("hi");
+            Assert.Equal("hello", result);
+        }
     }
+
+    
 }
